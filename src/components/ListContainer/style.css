@@ -1,0 +1,8 @@
+.list-container {
+    margin-top: 20px;
+    width: 80%;
+    height: 600px;
+    text-align: center;
+    padding: 10px;
+    overflow-y: auto;
+}

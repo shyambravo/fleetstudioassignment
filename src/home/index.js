@@ -4,6 +4,15 @@ import ListContainer from "../components/ListContainer/ListContainer";
 import "./style.css";
 
 const Home = () => {
+  const mockData = [
+    "#8f5656",
+    "#568f7e",
+    "#2056dc",
+    "#5e5720",
+    "#56658f",
+    "#000000"
+  ]
+
   return(
     <>
         <NavBar />
@@ -11,10 +20,10 @@ const Home = () => {
             <div className="search-container">
                 <div className="search-input">
                     <input type="text" placeholder="Search Colors"/>
-                    <img src="search-icon.png" alt="search-icon"/>
+                    <button><img src="search-icon.png" alt="search-icon"/></button>
                 </div>
             </div>
-            <ListContainer />
+            <ListContainer data={mockData}/>
         </div>
     </>
   )

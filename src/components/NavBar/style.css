@@ -3,7 +3,7 @@
     display: flex;
     justify-content: flex-start;
     align-items: center;
-    background-color: rgb(67, 110, 96);
     padding: 10px;
     color: azure;
+    box-shadow: 2px 2px 3px black;
 }

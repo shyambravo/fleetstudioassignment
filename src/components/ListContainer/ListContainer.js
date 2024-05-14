@@ -1,28 +1,40 @@
-import React from "react";
+import React, { memo } from "react";
 import "./style.css";
+import { findTextColorByContrast } from "../../utility/color-finder";
 
-export default function ListContainer(props) {
+const ListContainer = memo((props) => {
   const { data } = props;
 
   return (
     <div className="list-container">
-      <p>Search results for the term "color"</p>
-
       <div className="color-container">
         {data.map((color) => {
-          const height = Math.random() * 100
+          // Hgeiht will be set randomly to demonstrate masonry grid
+
+          const height = Math.random() * 500;
+
+          color = color.obj ? color.obj : color;
+
+          const textColor = findTextColorByContrast(color.hex);
 
           return (
             <div
-              key={color}
-              style={{ backgroundColor: color, minHeight: height }}
+              key={Math.random() + color.name}
+              style={{
+                backgroundColor: color.hex,
+                minHeight: height,
+                color: textColor,
+              }}
               className="card"
             >
-              <h3>{color}</h3>
+              <h3>{color.name}</h3>
+              <p>{color.hex}</p>
             </div>
           );
         })}
       </div>
     </div>
   );
-}
+});
+
+export { ListContainer };
